@@ -1,0 +1,685 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AFEB963C-8462-42F9-9E2D-E02A6AABAB65}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RealEstateWebsite</RootNamespace>
+    <AssemblyName>RealEstateWebsite</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>default</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>7.2</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.5.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.5.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.5.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.5.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.5.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.5.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdminstratorController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CustomerController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ErrorSessionController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginAdminController.cs" />
+    <Compile Include="Areas\Admin\Models\BlockCustomer.cs" />
+    <Compile Include="Areas\Admin\Models\BlockEmployee.cs" />
+    <Compile Include="Areas\Admin\Models\Dashboard.cs" />
+    <Compile Include="Areas\Admin\Models\DataPoint.cs" />
+    <Compile Include="Areas\Admin\Models\EmployeeModel.cs" />
+    <Compile Include="Areas\Admin\Models\IndexAdmin.cs" />
+    <Compile Include="Areas\Admin\Models\QuitEmployee.cs" />
+    <Compile Include="Areas\Admin\Models\ViewEmp.cs" />
+    <Compile Include="Areas\Admin\Controllers\SearchController.cs" />
+    <Compile Include="Areas\Censor\Controllers\PostController.cs" />
+    <Compile Include="Areas\User\Controllers\HomeController.cs" />
+    <Compile Include="Areas\User\UserAreaRegistration.cs" />
+    <Compile Include="Areas\Censor\Controllers\AccountController.cs" />
+    <Compile Include="Areas\Censor\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Censor\CensorAreaRegistration.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Account.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountLog.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BCrypt.cs" />
+    <Compile Include="Models\Block.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Block1.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CommonFunction.cs" />
+    <Compile Include="Models\Constants.cs" />
+    <Compile Include="Models\Customer.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Customer_Report.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DatabaseLog.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Detail.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Direction.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Employee.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ErrorLog.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\HashPwdTool.cs" />
+    <Compile Include="Models\Interested_Post.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Permission.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Permission_Role.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\PhoneNumber.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Post.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Post_Image.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Post_Report.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Post_Status.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Project.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Project_Image.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Promotion.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Promotion_Detail.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Quit.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RealEstateType.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RealEstateWebsite.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RealEstateWebsite.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RealEstateWebsite.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\RealEstateWebsite.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RealEstateWebsite.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Role_Account.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Status.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Type.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Type1.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\USP_GetPostCountBydate_Result.cs">
+      <DependentUpon>RealEstateWebsite.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Censor\accordions.css" />
+    <Content Include="Content\Censor\alerts.css" />
+    <Content Include="Content\Censor\animate.css" />
+    <Content Include="Content\Censor\bootstrap.min.css" />
+    <Content Include="Content\Censor\buttons.css" />
+    <Content Include="Content\Censor\c3\c3.min.css" />
+    <Content Include="Content\Censor\calendar\fullcalendar.min.css" />
+    <Content Include="Content\Censor\calendar\fullcalendar.print.min.css" />
+    <Content Include="Content\Censor\chosen\bootstrap-chosen.css" />
+    <Content Include="Content\Censor\chosen\chosen-sprite.png" />
+    <Content Include="Content\Censor\code-editor\ambiance.css" />
+    <Content Include="Content\Censor\code-editor\codemirror.css" />
+    <Content Include="Content\Censor\colorpicker\colorpicker.css" />
+    <Content Include="Content\Censor\cropper\cropper.min.css" />
+    <Content Include="Content\Censor\data-table\bootstrap-editable.css" />
+    <Content Include="Content\Censor\data-table\bootstrap-table.css" />
+    <Content Include="Content\Censor\datapicker\colorpicker.css" />
+    <Content Include="Content\Censor\datapicker\datepicker3.css" />
+    <Content Include="Content\Censor\dropzone\dropzone.css" />
+    <Content Include="Content\Censor\duallistbox\bootstrap-duallistbox.min.css" />
+    <Content Include="Content\Censor\editor\bootstrap-editable.css" />
+    <Content Include="Content\Censor\editor\datetimepicker.css" />
+    <Content Include="Content\Censor\editor\select2.css" />
+    <Content Include="Content\Censor\editor\x-editor-style.css" />
+    <Content Include="Content\Censor\educate-custon-icon.css" />
+    <Content Include="Content\Censor\font-awesome.min.css" />
+    <Content Include="Content\Censor\fonts\educate-icon.svg" />
+    <Content Include="Content\Censor\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Censor\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Censor\form.css" />
+    <Content Include="Content\Censor\form\all-type-forms.css" />
+    <Content Include="Content\Censor\form\themesaller-forms.css" />
+    <Content Include="Content\Censor\ionRangeSlider\ion.rangeSlider.css" />
+    <Content Include="Content\Censor\ionRangeSlider\ion.rangeSlider.skinFlat.css" />
+    <Content Include="Content\Censor\ionRangeSlider\sprite-skin-flat.png" />
+    <Content Include="Content\Censor\main.css" />
+    <Content Include="Content\Censor\meanmenu.min.css" />
+    <Content Include="Content\Censor\metisMenu\metisMenu-vertical.css" />
+    <Content Include="Content\Censor\metisMenu\metisMenu.min.css" />
+    <Content Include="Content\Censor\modals.css" />
+    <Content Include="Content\Censor\morrisjs\morris.css" />
+    <Content Include="Content\Censor\normalize.css" />
+    <Content Include="Content\Censor\notifications\Lobibox.min.css" />
+    <Content Include="Content\Censor\notifications\notifications.css" />
+    <Content Include="Content\Censor\owl.carousel.css" />
+    <Content Include="Content\Censor\owl.theme.css" />
+    <Content Include="Content\Censor\owl.transitions.css" />
+    <Content Include="Content\Censor\preloader\preloader-style.css" />
+    <Content Include="Content\Censor\responsive.css" />
+    <Content Include="Content\Censor\scrollbar\jquery.mCustomScrollbar.min.css" />
+    <Content Include="Content\Censor\select2\select2.min.css" />
+    <Content Include="Content\Censor\style.css" />
+    <Content Include="Content\Censor\summernote\summernote.css" />
+    <Content Include="Content\Censor\tabs.css" />
+    <Content Include="Content\Censor\touchspin\jquery.bootstrap-touchspin.min.css" />
+    <Content Include="Content\Censor\tree-viewer\32px.png" />
+    <Content Include="Content\Censor\tree-viewer\throbber.gif" />
+    <Content Include="Content\Censor\tree-viewer\tree-viewer.css" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\User\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\User\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Censor\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Censor\Views\Home\Index.cshtml" />
+    <Content Include="Content\Censor\summernote\fonts\summernote.eot" />
+    <Content Include="Content\Censor\summernote\fonts\summernote.ttf" />
+    <Content Include="Content\Censor\summernote\fonts\summernote.woff" />
+    <Content Include="Images\Admin\noAvater.png" />
+    <Content Include="Images\Censor\blog-details\1.jpg" />
+    <Content Include="Images\Censor\contact\1.jpg" />
+    <Content Include="Images\Censor\contact\2.jpg" />
+    <Content Include="Images\Censor\contact\3.jpg" />
+    <Content Include="Images\Censor\contact\4.jpg" />
+    <Content Include="Images\Censor\courses\1.jpg" />
+    <Content Include="Images\Censor\courses\2.jpg" />
+    <Content Include="Images\Censor\courses\3.jpg" />
+    <Content Include="Images\Censor\cropper\1.jpg" />
+    <Content Include="Images\Censor\favicon.ico" />
+    <Content Include="Images\Censor\green1.png" />
+    <Content Include="Images\Censor\logo\logo-batdongsan.jpg" />
+    <Content Include="Images\Censor\logo\logo.png" />
+    <Content Include="Images\Censor\logo\logosn.png" />
+    <Content Include="Images\Censor\notification\1.jpg" />
+    <Content Include="Images\Censor\notification\2.jpg" />
+    <Content Include="Images\Censor\notification\3.jpg" />
+    <Content Include="Images\Censor\notification\4.jpg" />
+    <Content Include="Images\Censor\notification\5.jpg" />
+    <Content Include="Images\Censor\notification\6.jpg" />
+    <Content Include="Images\Censor\product\book-1.jpg" />
+    <Content Include="Images\Censor\product\book-2.jpg" />
+    <Content Include="Images\Censor\product\book-3.jpg" />
+    <Content Include="Images\Censor\product\book-4.jpg" />
+    <Content Include="Images\Censor\product\pro4.jpg" />
+    <Content Include="Images\Censor\product\profile-bg.jpg" />
+    <Content Include="Images\Censor\profile\1.jpg" />
+    <Content Include="Images\Censor\student\1.jpg" />
+    <Content Include="Images\Censor\student\2.jpg" />
+    <Content Include="Images\Censor\student\3.jpg" />
+    <Content Include="Images\Censor\student\4.jpg" />
+    <Content Include="Images\Customer\c_1.jpg" />
+    <Content Include="Images\Customer\c_2.jpg" />
+    <Content Include="Images\Customer\c_3.jpg" />
+    <Content Include="Images\Customer\c_4.jpg" />
+    <Content Include="Images\Customer\c_5.jpg" />
+    <Content Include="Images\Employee\e_1.jpg" />
+    <Content Include="Images\Employee\e_2.jpg" />
+    <Content Include="Images\Employee\e_3.jpg" />
+    <Content Include="Images\Employee\e_4.jpg" />
+    <Content Include="Images\Employee\e_5.jpg" />
+    <Content Include="Images\Post\1.1.jpg" />
+    <Content Include="Images\Post\1.2.jpg" />
+    <Content Include="Images\Post\1.3.jpg" />
+    <Content Include="Images\Post\2.1.jpg" />
+    <Content Include="Images\Post\2.2.jpg" />
+    <Content Include="Images\Post\2.3.jpg" />
+    <Content Include="Images\Post\2.4.jpg" />
+    <Content Include="Images\Post\3.1.jpg" />
+    <Content Include="Images\Post\3.2.jpg" />
+    <Content Include="Images\Post\3.3.jpg" />
+    <Content Include="Images\Post\3.4.jpg" />
+    <Content Include="Images\Post\3.5.jpg" />
+    <Content Include="Images\Post\4.1.jpg" />
+    <Content Include="Images\Post\4.2.jpg" />
+    <Content Include="Images\Post\5.1.jpg" />
+    <Content Include="Images\Post\5.2.jpg" />
+    <Content Include="Images\Post\6.1.jpg" />
+    <Content Include="Images\Post\6.2.jpg" />
+    <Content Include="Images\Post\6.3.jpg" />
+    <Content Include="Images\Post\6.4.jpg" />
+    <Content Include="Models\RealEstateWebsite.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RealEstateWebsite.edmx</DependentUpon>
+      <LastGenOutput>RealEstateWebsite.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\RealEstateWebsite.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>RealEstateWebsite.edmx</DependentUpon>
+      <LastGenOutput>RealEstateWebsite.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\Censor\bootstrap.min.js" />
+    <Content Include="Scripts\Censor\c3-charts\c3-active.js" />
+    <Content Include="Scripts\Censor\c3-charts\c3.min.js" />
+    <Content Include="Scripts\Censor\c3-charts\d3.min.js" />
+    <Content Include="Scripts\Censor\calendar\fullcalendar-active.js" />
+    <Content Include="Scripts\Censor\calendar\fullcalendar.min.js" />
+    <Content Include="Scripts\Censor\calendar\moment.min.js" />
+    <Content Include="Scripts\Censor\card.js" />
+    <Content Include="Scripts\Censor\charts\area-chart.js" />
+    <Content Include="Scripts\Censor\charts\bar-chart.js" />
+    <Content Include="Scripts\Censor\charts\Chart.js" />
+    <Content Include="Scripts\Censor\charts\line-chart.js" />
+    <Content Include="Scripts\Censor\charts\rounded-chart.js" />
+    <Content Include="Scripts\Censor\chart\jquery.peity.min.js" />
+    <Content Include="Scripts\Censor\chart\peity-active.js" />
+    <Content Include="Scripts\Censor\chosen\chosen-active.js" />
+    <Content Include="Scripts\Censor\chosen\chosen.jquery.js" />
+    <Content Include="Scripts\Censor\code-editor\code-editor-active.js" />
+    <Content Include="Scripts\Censor\code-editor\code-editor.js" />
+    <Content Include="Scripts\Censor\code-editor\codemirror.js" />
+    <Content Include="Scripts\Censor\colorpicker\color-picker-active.js" />
+    <Content Include="Scripts\Censor\colorpicker\jquery.spectrum.min.js" />
+    <Content Include="Scripts\Censor\counterup\counterup-active.js" />
+    <Content Include="Scripts\Censor\counterup\jquery.counterup.min.js" />
+    <Content Include="Scripts\Censor\counterup\waypoints.min.js" />
+    <Content Include="Scripts\Censor\cropper\cropper-actice.js" />
+    <Content Include="Scripts\Censor\cropper\cropper.min.js" />
+    <Content Include="Scripts\Censor\data-map\d3.min.js" />
+    <Content Include="Scripts\Censor\data-map\data-maps-active.js" />
+    <Content Include="Scripts\Censor\data-map\datamaps.all.min.js" />
+    <Content Include="Scripts\Censor\data-map\topojson.js" />
+    <Content Include="Scripts\Censor\data-table\bootstrap-editable.js" />
+    <Content Include="Scripts\Censor\data-table\bootstrap-table-editable.js" />
+    <Content Include="Scripts\Censor\data-table\bootstrap-table-export.js" />
+    <Content Include="Scripts\Censor\data-table\bootstrap-table-resizable.js" />
+    <Content Include="Scripts\Censor\data-table\bootstrap-table.js" />
+    <Content Include="Scripts\Censor\data-table\colResizable-1.5.source.js" />
+    <Content Include="Scripts\Censor\data-table\data-table-active.js" />
+    <Content Include="Scripts\Censor\data-table\tableExport.js" />
+    <Content Include="Scripts\Censor\datapicker\bootstrap-datepicker.js" />
+    <Content Include="Scripts\Censor\datapicker\datepicker-active.js" />
+    <Content Include="Scripts\Censor\datepicker\datepicker-active.js" />
+    <Content Include="Scripts\Censor\datepicker\jquery-ui.min.js" />
+    <Content Include="Scripts\Censor\dropzone\dropzone.js" />
+    <Content Include="Scripts\Censor\duallistbox\duallistbox.active.js" />
+    <Content Include="Scripts\Censor\duallistbox\jquery.bootstrap-duallistbox.js" />
+    <Content Include="Scripts\Censor\e-payment.js" />
+    <Content Include="Scripts\Censor\editable\bootstrap-datetimepicker.js" />
+    <Content Include="Scripts\Censor\editable\bootstrap-editable.js" />
+    <Content Include="Scripts\Censor\editable\jquery.mockjax.js" />
+    <Content Include="Scripts\Censor\editable\mock-active.js" />
+    <Content Include="Scripts\Censor\editable\moment.min.js" />
+    <Content Include="Scripts\Censor\editable\select2.js" />
+    <Content Include="Scripts\Censor\editable\xediable-active.js" />
+    <Content Include="Scripts\Censor\form-validation\form-active.js" />
+    <Content Include="Scripts\Censor\form-validation\jquery.form.min.js" />
+    <Content Include="Scripts\Censor\form-validation\jquery.validate.min.js" />
+    <Content Include="Scripts\Censor\google.maps\google.maps-active.js" />
+    <Content Include="Scripts\Censor\icheck\icheck-active.js" />
+    <Content Include="Scripts\Censor\icheck\icheck.min.js" />
+    <Content Include="Scripts\Censor\input-mask\jasny-bootstrap.min.js" />
+    <Content Include="Scripts\Censor\ionRangeSlider\ion.rangeSlider.active.js" />
+    <Content Include="Scripts\Censor\ionRangeSlider\ion.rangeSlider.min.js" />
+    <Content Include="Scripts\Censor\jquery-price-slider.js" />
+    <Content Include="Scripts\Censor\jquery.maskedinput.min.js" />
+    <Content Include="Scripts\Censor\jquery.meanmenu.js" />
+    <Content Include="Scripts\Censor\jquery.payform.min.js" />
+    <Content Include="Scripts\Censor\jquery.scrollUp.min.js" />
+    <Content Include="Scripts\Censor\jquery.sticky.js" />
+    <Content Include="Scripts\Censor\knob\jquery.knob.js" />
+    <Content Include="Scripts\Censor\knob\knob-active.js" />
+    <Content Include="Scripts\Censor\main.js" />
+    <Content Include="Scripts\Censor\masking-active.js" />
+    <Content Include="Scripts\Censor\metisMenu\metisMenu-active.js" />
+    <Content Include="Scripts\Censor\metisMenu\metisMenu.min.js" />
+    <Content Include="Scripts\Censor\morrisjs\home3-active.js" />
+    <Content Include="Scripts\Censor\morrisjs\morris-active-pro.js" />
+    <Content Include="Scripts\Censor\morrisjs\morris-active.js" />
+    <Content Include="Scripts\Censor\morrisjs\morris.js" />
+    <Content Include="Scripts\Censor\morrisjs\raphael-min.js" />
+    <Content Include="Scripts\Censor\multiple-email\multiple-email-active.js" />
+    <Content Include="Scripts\Censor\notifications\Lobibox.js" />
+    <Content Include="Scripts\Censor\notifications\notification-active.js" />
+    <Content Include="Scripts\Censor\owl.carousel.min.js" />
+    <Content Include="Scripts\Censor\password-meter\password-meter-active.js" />
+    <Content Include="Scripts\Censor\password-meter\pwstrength-bootstrap.min.js" />
+    <Content Include="Scripts\Censor\password-meter\zxcvbn.js" />
+    <Content Include="Scripts\Censor\pdf\jquery.media.js" />
+    <Content Include="Scripts\Censor\pdf\pdf-active.js" />
+    <Content Include="Scripts\Censor\peity\jquery.peity.min.js" />
+    <Content Include="Scripts\Censor\peity\peity-active.js" />
+    <Content Include="Scripts\Censor\plugins.js" />
+    <Content Include="Scripts\Censor\rangle-slider\jquery-ui-1.10.4.custom.min.js" />
+    <Content Include="Scripts\Censor\rangle-slider\jquery-ui-touch-punch.min.js" />
+    <Content Include="Scripts\Censor\rangle-slider\rangle-active.js" />
+    <Content Include="Scripts\Censor\scrollbar\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="Scripts\Censor\scrollbar\mCustomScrollbar-active.js" />
+    <Content Include="Scripts\Censor\select2\select2-active.js" />
+    <Content Include="Scripts\Censor\select2\select2.full.min.js" />
+    <Content Include="Scripts\Censor\sparkline\jquery.charts-sparkline.js" />
+    <Content Include="Scripts\Censor\sparkline\jquery.sparkline.min.js" />
+    <Content Include="Scripts\Censor\sparkline\sparkline-active.js" />
+    <Content Include="Scripts\Censor\summernote\summernote-active.js" />
+    <Content Include="Scripts\Censor\summernote\summernote.min.js" />
+    <Content Include="Scripts\Censor\tab.js" />
+    <Content Include="Scripts\Censor\tawk-chat.js" />
+    <Content Include="Scripts\Censor\touchspin\jquery.bootstrap-touchspin.min.js" />
+    <Content Include="Scripts\Censor\touchspin\touchspin-active.js" />
+    <Content Include="Scripts\Censor\tree-line\jstree.active.js" />
+    <Content Include="Scripts\Censor\tree-line\jstree.min.js" />
+    <Content Include="Scripts\Censor\vendor\jquery-1.12.4.min.js" />
+    <Content Include="Scripts\Censor\vendor\modernizr-2.8.3.min.js" />
+    <Content Include="Scripts\Censor\wizard\jquery.steps.js" />
+    <Content Include="Scripts\Censor\wizard\steps-active.js" />
+    <Content Include="Scripts\Censor\wow.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Report\" />
+    <Folder Include="Areas\Censor\Models\" />
+    <Folder Include="Areas\User\Models\" />
+    <Folder Include="Content\Admin\assets\" />
+    <Folder Include="Content\Admin\contactform\" />
+    <Folder Include="Content\Admin\css\" />
+    <Folder Include="Content\Admin\fonts\" />
+    <Folder Include="Content\Admin\img\" />
+    <Folder Include="Content\Admin\js\" />
+    <Folder Include="Content\User\" />
+    <Folder Include="Images\User\" />
+    <Folder Include="Scripts\Admin\" />
+    <Folder Include="Scripts\User\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\Censor\Views\Web.config" />
+    <Content Include="Content\Censor\fonts\educate-icon.ttf" />
+    <Content Include="Content\Censor\fonts\educate-icon.woff" />
+    <Content Include="Content\Censor\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Censor\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Censor\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Censor\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\Censor\fonts\FontAwesome.otf" />
+    <Content Include="Content\Censor\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Censor\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Censor\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Censor\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Areas\Censor\Views\Account\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\Web.config" />
+    <Content Include="Areas\User\Views\Web.config" />
+    <Content Include="Areas\Censor\Views\Post\Censorship.cshtml" />
+    <Content Include="Areas\Admin\Views\LoginAdmin\Login.cshtml" />
+    <Content Include="Areas\Admin\Views\Adminstrator\ViewEmp.cshtml" />
+    <Content Include="Areas\Admin\Views\Adminstrator\CreateEmp.cshtml" />
+    <Content Include="Areas\Admin\Views\Adminstrator\EditEmp.cshtml" />
+    <Content Include="Areas\Admin\Views\Adminstrator\SaveEmp.cshtml" />
+    <Content Include="Areas\Admin\Views\Adminstrator\ViewAccount.cshtml" />
+    <Content Include="Areas\Admin\Views\Search\SearchResultEmployee.cshtml" />
+    <Content Include="Areas\Admin\Views\Adminstrator\ProfileEmp.cshtml" />
+    <EntityDeploy Include="Models\RealEstateWebsite.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>RealEstateWebsite.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\RealEstateWebsite.edmx.diagram">
+      <DependentUpon>RealEstateWebsite.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\Admin\Views\Adminstrator\ChangePassAccount.cshtml" />
+    <Content Include="Areas\Admin\Views\Customer\ChangePassAccount.cshtml" />
+    <Content Include="Areas\Admin\Views\Customer\CreateCustomer.cshtml" />
+    <Content Include="Areas\Admin\Views\Customer\EditCustomer.cshtml" />
+    <Content Include="Areas\Admin\Views\Customer\ReportedCustomer.cshtml" />
+    <Content Include="Areas\Admin\Views\Customer\ViewAccount.cshtml" />
+    <Content Include="Areas\Admin\Views\Customer\ViewCustomer.cshtml" />
+    <Content Include="Areas\Admin\Views\Search\SearchResultCustomer.cshtml" />
+    <Content Include="Areas\Admin\Views\ErrorSession\Error404.cshtml" />
+    <Content Include="Areas\Admin\Views\ErrorSession\DefaultError.cshtml" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>51736</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:51736/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
